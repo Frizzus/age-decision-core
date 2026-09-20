@@ -8,7 +8,7 @@ then
 fi
 
 # A faire pour supprimer .venv en cas de problème d'installation
-trap '' EXIT
+trap "printf 'ERROR => DELETING VENV\n'; rm -r ./.venv/" EXIT
 
 python -m venv ./.venv/
 . ./.venv/bin/activate
