@@ -17,8 +17,5 @@ create_venv:
 del_venv:
 	rm -rf ./.venv/
 
-venv:
-	. ./.venv/bin/activate
-
 checking:
 	./scripts/ci/check_all_docker.sh
