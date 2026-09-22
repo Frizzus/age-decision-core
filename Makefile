@@ -1,4 +1,4 @@
-CHECK_IN_VENV = "if ! test -z $$VIRTUAL_ENV ;then printf 'Not in a python virtual env, exiting'; exit 1 ;fi"
+CHECK_IN_VENV = if test -z $$VIRTUAL_ENV ;then printf 'Not in a python virtual env, exiting'; exit 1 ;fi
 
 start_dev:
 	./scripts/docker/dev.sh
