@@ -19,11 +19,11 @@ del_venv:
 	rm -rf ./.venv/
 
 checking:
-	$(CHECK_IN_VENV)
+	@$(CHECK_IN_VENV)
 	./scripts/ci/check_all_docker.sh
 
 
 update_all_dev:
-	$(CHECK_IN_VENV)
+	@$(CHECK_IN_VENV)
 	./scripts/dev/update_all.sh
 
