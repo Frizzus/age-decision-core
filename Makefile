@@ -1,4 +1,8 @@
-CHECK_IN_VENV = if test -z $$VIRTUAL_ENV ;then printf "Not in a python virtual env, exiting\n"; exit 1 ;fi
+check_in_venv:
+	@if test -z $$VIRTUAL_ENV \
+		then printf "Not in a python virtual env, exiting\n" \
+		exit 1 \
+	fi
 
 start_dev:
 	./scripts/docker/dev.sh
@@ -18,12 +22,10 @@ create_venv:
 del_venv:
 	rm -rf ./.venv/
 
-checking:
-	@$(CHECK_IN_VENV)
+checking: check_in_venv
 	./scripts/ci/check_all_docker.sh
 
 
-update_all_dev:
-	@$(CHECK_IN_VENV)
+update_all_dev: check_in_venv
 	./scripts/dev/update_all.sh
 
