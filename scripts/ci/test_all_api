@@ -15,6 +15,7 @@ export EXPECTED="$TEST_HOME/expected"
 export PROJECT_FILE='./project.json'
 file_exist $PROJECT_FILE
 
+set +u
 for file in "${TEST_HOME}/*.test.sh"
 do
 	# Options facultatifs pour le shell
