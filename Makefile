@@ -1,4 +1,4 @@
-ACTIVATE_VENV = ". ./.venv/bin/activate"
+CHECK_IN_VENV = "if ! test -z $VIRTUAL_ENV ;then printf 'Not in a python virtual env, exiting'; exit 1 ;fi"
 
 start_dev:
 	./scripts/docker/dev.sh
@@ -19,11 +19,11 @@ del_venv:
 	rm -rf ./.venv/
 
 checking:
-	$(ACTIVATE_VENV)
+	$(CHECK_IN_VENV)
 	./scripts/ci/check_all_docker.sh
 
 
 update_all_dev:
-	$(ACTIVATE_VENV)
+	$(CHECK_IN_VENV)
 	./scripts/dev/update_all.sh
 
