@@ -15,10 +15,10 @@ curl --silent http://localhost:8000/health > $ACTUAL
 # le fichier project.json, ne devrait pas contenir ce genre de caractères, si il en contient le test devrait l'arrêter
 jq <<JSON > $EXPECTED
 {
-	status:"ok",
-	service:\"$(get_value_from_project service_name)\",
-	version: \"$(get_value_from_project version)\",
-	contract_version: \"$(get_value_from_project contract_version)\" 
+	"status":"ok",
+	"service": "$(get_value_from_project service_name)",
+	"version": "$(get_value_from_project version)",
+	"contract_version": "$(get_value_from_project contract_version)" 
 }
 JSON
 
