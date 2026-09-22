@@ -1,4 +1,4 @@
-ACTIVATE_VENV = ./.venv/bin/activate
+ACTIVATE_VENV = ". ./.venv/bin/activate"
 
 start_dev:
 	./scripts/docker/dev.sh
