@@ -1,9 +1,9 @@
 
 set -eu
 
-if test -d "./.venv/" 
+if test -d "./.venv/"
 then
-	printf "The virtual environnement is already created, use 'make del_venv' to delete it" 
+	printf "The virtual environnement is already created, use 'make del_venv' to delete it"
 	exit 1
 fi
 
