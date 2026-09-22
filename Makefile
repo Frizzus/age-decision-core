@@ -1,3 +1,4 @@
+ACTIVATE_VENV = ./.venv/bin/activate
 
 start_dev:
 	./scripts/docker/dev.sh
@@ -18,7 +19,11 @@ del_venv:
 	rm -rf ./.venv/
 
 checking:
+	$(ACTIVATE_VENV)
 	./scripts/ci/check_all_docker.sh
 
+
 update_all_dev:
+	$(ACTIVATE_VENV)
 	./scripts/dev/update_all.sh
+
