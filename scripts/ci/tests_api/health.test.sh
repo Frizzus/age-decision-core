@@ -9,7 +9,7 @@ get_value_from_project () {
 	jq -r ".$1" $PROJECT_FILE
 }
 
-curl --silent http://localhost:8000/health > $ACTUAL
+curl --silent http://localhost:8000/health | jq > $ACTUAL
 
 # jq -n couplé aux arguments --args permet d'échapper les caractères spéciaux.
 # le fichier project.json, ne devrait pas contenir ce genre de caractères, si il en contient le test devrait l'arrêter
