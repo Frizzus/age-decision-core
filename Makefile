@@ -19,3 +19,6 @@ del_venv:
 
 checking:
 	./scripts/ci/check_all_docker.sh
+
+update_all_dev:
+	./scripts/dev/update_all.sh
