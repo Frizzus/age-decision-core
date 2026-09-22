@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -eu
+alias dir_exist='test -d'
+alias file_exist='test -f'
+
+
+# TEST_HOME est le dossier où se trouve tout les fichiers tests, si il n'est pas défini par le lanceur le script s'arrête
+dir_exist $TEST_HOME
+
+
+export ACTUAL="$TEST_HOME/actual"
+export EXPECTED="$TEST_HOME/expected"
+
+export PROJECT_FILE='./project.json'
+file_exist $PROJECT_FILE
+
+for file in "${TEST_HOME}/*.test.sh"
+do
+	# Options facultatifs pour le shell
+	sh $SH_OPTS $file
+done
