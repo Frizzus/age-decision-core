@@ -30,5 +30,5 @@ update_all_dev: check_in_venv
 	./scripts/dev/update_all.sh
 
 test_api:
-	TEST_HOME='./scripts/ci/tests_api/'
+	TEST_HOME='./scripts/ci/tests_api/' \
 	./scripts/ci/test_all_api
