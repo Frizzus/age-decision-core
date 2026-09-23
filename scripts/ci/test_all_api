@@ -15,6 +15,9 @@ export EXPECTED="$TEST_HOME/expected"
 export PROJECT_FILE='./project.json'
 file_exist $PROJECT_FILE
 
+export INFRA_SETTINGS='./app/infrastructure/config/settings.py'
+file_exist $INFRA_SETTINGS
+
 set +u
 for file in "${TEST_HOME}/*.test.sh"
 do
