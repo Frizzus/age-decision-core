@@ -15,7 +15,7 @@ to_valid_bool () {
 	tr '[A-Z]' '[a-z]'
 }
 
-curl --silent http://localhost:8000/version | jq > $ACTUAL
+curl --silent http://localhost:8000/engine/status | jq > $ACTUAL
 
 jq <<JSON > $EXPECTED
 {
