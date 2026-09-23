@@ -1,11 +1,20 @@
 #!/bin/sh
 
+# This script start all test in TEST_HOME
+# If one of the var is not set here, it means it have to be set by the caller :
+# - TEST_HOME
+# SH_OTPS is optionnal
+
+# TEST_HOME Is the dir where all the tests are located
+# ACTUAL and EXPECTED are temporary files for the tests
+# INFRA_SETTINGS is the python file used by app/infrastructure as a setting file
+# PROJECT_FILE Is the project file of age-decision-core
+
 set -eu
 alias dir_exist='test -d'
 alias file_exist='test -f'
 
 
-# TEST_HOME est le dossier où se trouve tout les fichiers tests, si il n'est pas défini par le lanceur le script s'arrête
 dir_exist $TEST_HOME
 
 
@@ -24,3 +33,6 @@ do
 	# Options facultatifs pour le shell
 	sh $SH_OPTS $file
 done
+
+rm $ACTUAL
+rm $EXPECTED

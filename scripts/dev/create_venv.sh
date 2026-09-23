@@ -7,7 +7,7 @@ then
 	exit 1
 fi
 
-#   A faire pour supprimer .venv en cas de problème d'installation
+# Trap removing .venv if a issue arise while installing package
 trap "printf 'ERROR => DELETING VENV\n'; rm -r ./.venv/" EXIT
 
 python -m venv ./.venv/
