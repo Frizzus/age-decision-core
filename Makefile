@@ -1,8 +1,8 @@
 check_in_venv:
 	@if test -z $$VIRTUAL_ENV \
-		then printf "Not in a python virtual env, exiting\n" \
+		;then printf "Not in a python virtual env, exiting\n" \
 		exit 1 \
-	fi
+	;fi
 
 start_dev:
 	./scripts/docker/dev.sh

@@ -18,7 +18,6 @@ file_exist $PROJECT_FILE
 set +u
 for file in "${TEST_HOME}/*.test.sh"
 do
-	set -x
 	# Options facultatifs pour le shell
 	sh $SH_OPTS $file
 done

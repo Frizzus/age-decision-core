@@ -3,7 +3,6 @@ set -eu
 # EXPECTED: Fichier contenant le résultat attendu
 # ACTUAL: Fichier contenant le résultat du test
 # PROJECT_FILE: Fichier project.json
-# COMPATIBILITY_FILE: Fichier compatibility.json
 
 get_value_from_project () {
 	jq -r ".$1" $PROJECT_FILE
@@ -18,7 +17,7 @@ jq <<JSON > $EXPECTED
 	"status":"ok",
 	"service": "$(get_value_from_project service_name)",
 	"version": "$(get_value_from_project version)",
-	"contract_version": "$(get_value_from_project contract_version)" 
+	"contract_version": "$(get_value_from_project contract_version)"
 }
 JSON
 
