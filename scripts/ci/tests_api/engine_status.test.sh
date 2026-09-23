@@ -18,7 +18,7 @@ jq <<JSON > $EXPECTED
     "loaded": true
   },
   "inference": {
-    "model_id": $(get_value_from_settings age_model_id)
+    "model_id": $(get_value_from_settings age_model_id),
     "model_version": $(get_value_from_settings age_model_version),
     "task": "age_estimation",
     "runtime": "onnx",
