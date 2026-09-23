@@ -6,7 +6,7 @@ set -eu
 
 get_value_from_settings () {
 	value="$1"
-	awk -c "BEGIN {FS=\"=\"}; /$value/ {print \$2}" $INFRA_SETTINGS
+	awk "BEGIN {FS=\"=\"}; /$value/ {print \$2}" $INFRA_SETTINGS
 }
 
 curl --silent http://localhost:8000/version | jq > $ACTUAL
